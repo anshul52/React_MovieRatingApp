@@ -1,23 +1,50 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Header from './components/Header/Header'
-import Home from './components/Home/Home'
-import NoPage from './components/PageNotFound/NoPage'
-import Footer from './components/Footer/Footer'
-import MovieDetails from './components/MovieListing/MovieDetails'
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import MobileNavigation from "./components/MobileNavigation";
+import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setBannerData, setImageURL } from "./store/movieoSlice";
 
-const App = () => {
+function App() {
+  const dispatch = useDispatch();
+
+  const fetchTrendingData = async () => {
+    try {
+      const response = await axios.get("/trending/all/week");
+
+      dispatch(setBannerData(response.data.results));
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  const fetchConfiguration = async () => {
+    try {
+      const response = await axios.get("/configuration");
+
+      dispatch(setImageURL(response.data.images.secure_base_url + "original"));
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    fetchTrendingData();
+    fetchConfiguration();
+    // console.log("-----", process?.env?.REACT_APP_ACCESS_TOKEN);
+  }, []);
+
   return (
-    <div>
+    <main className="pb-14 lg:pb-0">
       <Header />
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/movie/:imdbID' element={<MovieDetails/>} />
-        <Route path="*" element={<NoPage />} />
-      </Routes>
-      <Footer/>
-    </div>
-  )
+      <div className="min-h-[90vh]">
+        <Outlet />
+      </div>
+      <Footer />
+      <MobileNavigation />
+    </main>
+  );
 }
 
-export default App
+export default App;
