@@ -1,0 +1,180 @@
+html,
+body {
+  background-color: rgb(37, 40, 46);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body h2 {
+  width: 560px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: sandybrown;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.wrapper {
+  width: 560px;
+  margin: auto;
+  border: 2px solid sandybrown;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  background-color: dimgrey;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.skeleton1 {
+  width: 0;
+  height: 120px;
+  box-shadow: 0 0 50px 50px rgba(160, 160, 160, 0.5);
+  animation: skeleton1 1s linear infinite;
+}
+
+@keyframes skeleton1 {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(20px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(170px);
+    opacity: 1;
+  }
+}
+
+.profile {
+  width: 200px;
+  height: 30px;
+  background-color: dimgrey;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.skeleton2 {
+  width: 0;
+  height: 30px;
+  box-shadow: 0 0 50px 50px rgba(160, 160, 160, 0.5);
+  animation: skeleton2 1s linear infinite;
+}
+
+@keyframes skeleton2 {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(20px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(250px);
+    opacity: 1;
+  }
+}
+
+.bio {
+  width: 300px;
+  height: 30px;
+  background-color: dimgrey;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skeleton3 {
+  width: 0;
+  height: 30px;
+  box-shadow: 0 0 50px 50px rgba(160, 160, 160, 0.5);
+  animation: skeleton3 1s linear infinite;
+}
+
+@keyframes skeleton3 {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(20px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(350px);
+    opacity: 1;
+  }
+}
+
+.gallery {
+  width: 250px;
+  height: 200px;
+  background-color: dimgrey;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skeleton4 {
+  width: 0;
+  height: 250px;
+  box-shadow: 0 0 50px 50px rgba(160, 160, 160, 0.5);
+  animation: skeleton4 1s linear infinite;
+  opacity: 0;
+}
+
+@keyframes skeleton4 {
+  0% {
+    transform: translate(-50px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(20px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translate(300px);
+    opacity: 1;
+  }
+}
