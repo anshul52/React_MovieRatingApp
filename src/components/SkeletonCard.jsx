@@ -3,7 +3,7 @@ import style from "../style/SkeletonLoader.module.css";
 
 const SkeletonCard = () => {
   return (
-    <div className="w-full min-w-[230px] max-w-[230px] bg-[#35373B] h-80  block rounded relative hover:scale-105 transition-all">
+    <div className="w-full min-w-[230px] max-w-[230px] bg-[#35373B] h-80  block rounded-[5px] relative hover:scale-105 transition-all">
       <div className="bg-[#35373B]">
         <div className={`w-full overflow-hidden`}>
           <div className="px-3 py-3">

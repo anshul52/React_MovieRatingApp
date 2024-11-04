@@ -20,7 +20,7 @@ const HorizontalScollCard = ({ data = [], heading, trending, media_type }) => {
       <div className=" relative">
         <div
           ref={contaierRef}
-          className="grid grid-cols-[repeat(auto-fit,230px)] grid-flow-col gap-6 overflow-hidden overflow-x-scroll relative z-10 scroll-smooth transition-all scrolbar-none"
+          className="grid grid-cols-[repeat(auto-fit,230px)] grid-flow-col gap-6 overflow-hidden overflow-x-scroll relative z-10 scroll-smooth transition-all scrolbar-none h-80"
         >
           {data.map((data, index) => {
             return (

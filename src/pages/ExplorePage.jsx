@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
-import SkeletonCard from "../components/skeletonCard";
+import SkeletonCard from "../components/SkeletonCard";
 
 const ExplorePage = () => {
   const params = useParams();
@@ -27,6 +27,10 @@ const ExplorePage = () => {
       console.log("error", error);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleScroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {

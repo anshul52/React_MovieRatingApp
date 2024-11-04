@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import useFetchDetails from "../hooks/useFetchDetails";
@@ -38,6 +38,10 @@ const DetailsPage = () => {
     ?.map((el) => el?.name)
     ?.join(", ");
 
+  useEffect(() => {
+    // Scroll to the top of the page on component mount
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div
     //  className="mt-16"
